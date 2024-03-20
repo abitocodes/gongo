@@ -14,7 +14,7 @@ Link: https://www.kisa.or.kr/401/form?postSeq=3244&page=1
 Link: https://www.kisa.or.kr/401/form?postSeq=3243&page=1
 2024-03-19 17:38:26,216:Message sent: Title: 2024년도 AI 보안 제품 및 서비스 확산 지원사업 수요기관/기업 모집공고(~3.22(금), 16:00)
 Link: https://www.kisa.or.kr/401/form?postSeq=3242&page=1
-2024-03-20 11:12:37,203:일자: 2024-03-20
+2024-03-20 13:29:57,215:일자: 2024-03-19
 제목: AI보안관제 전문인력양성 사업설명회 안내
 출처: KISA 한국인터넷진흥원 공지사항
 링크: https://www.kisa.or.kr/401/form?postSeq=3250&page=1
