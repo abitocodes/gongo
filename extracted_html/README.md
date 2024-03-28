@@ -1,0 +1,1 @@
+A folder that collects HTML documents extracted after visiting a website for analysis.

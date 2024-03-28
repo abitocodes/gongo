@@ -6,8 +6,9 @@ import requests
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
@@ -38,7 +39,15 @@ def read_log():
 def fetch_posts(website):
     posts = []
     if website['selenium'] == "true":
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        # Firefox 옵션 객체를 생성합니다.
+        firefox_options = Options()
+        # 헤드리스 모드를 활성화합니다.
+        firefox_options.add_argument("--headless")
+        # WebDriver 로그를 별도의 파일로 리디렉션합니다.
+        firefox_options.set_preference("webdriver.log.file", "/path/to/webdriver.log")
+
+        # Firefox 드라이버를 헤드리스 모드 옵션으로 초기화합니다.
+        driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=firefox_options)
         driver.get(website['url'])
 
         search_box = driver.find_element(By.ID, website['selenium_inputBoxId'])
@@ -50,6 +59,10 @@ def fetch_posts(website):
         )
 
         html_source = driver.page_source
+        # 크롤링된 HTML 소스를 파일로 저장합니다.
+        with open('crawled.html', 'w', encoding='utf-8') as file:
+            file.write(html_source)
+
         driver.quit()
     else:
         response = requests.get(website['url'])
@@ -74,7 +87,7 @@ def log_and_print_posts(posts):
     for post in new_posts:
         message = f"일자: {post['date']}, 제목: {post['title']}, 출처: {post['source']}, 링크: {post['link']}"
         print(message.replace(',', '\n'))
-        with open(os.path.join(os.path.dirname(__file__), '..', 'log.csv'), 'a', newline='') as log_file:
+        with open(os.path.join(os.path.dirname(__file__), '..', 'log.csv'), 'a', newline='', encoding='utf-8') as log_file:
             csv_writer = csv.writer(log_file)
             csv_writer.writerow([post['date'], post['title'], post['source'], post['link']])
     return True

@@ -5,10 +5,7 @@
 2023-12-14,2024년 블록체인 특화 클러스터 조성 사업 모집 공고,KISA 한국인터넷진흥원>알림마당>공지사항,https://www.kisa.or.kr/401/form?postSeq=3228&page=1
 2023-11-15,차세대 웹 컨퍼런스 개최 안내(11.27),KISA 한국인터넷진흥원>알림마당>공지사항,https://www.kisa.or.kr/401/form?postSeq=3218&page=1
 2023-11-08,"블록체인 수요공급자 협의체 ABLE 참여기업(수요, 공급) 모집 안내",KISA 한국인터넷진흥원>알림마당>공지사항,https://www.kisa.or.kr/401/form?postSeq=3213&page=1
+2023-11-06,2023년 블록체인 진흥주간 행사 개최(11.15~16),KISA 한국인터넷진흥원>알림마당>공지사항,https://www.kisa.or.kr/401/form?postSeq=3210&page=12024-03-27 17:42:09,694,
 2023-11-06,2023년 블록체인 진흥주간 행사 개최(11.15~16),KISA 한국인터넷진흥원>알림마당>공지사항,https://www.kisa.or.kr/401/form?postSeq=3210&page=1
-2024-03-27 15:32:41,844,====== WebDriver manager ======
-2024-03-27 15:32:41,939,There is no [mac_arm64] chromedriver "latest" for browser google-chrome "123.0.6312" in cache
-2024-03-27 15:32:41,939,Get LATEST chromedriver version for google-chrome
-2024-03-27 16:03:07,990,====== WebDriver manager ======
-2024-03-27 16:03:08,202,There is no [mac_arm64] chromedriver "latest" for browser google-chrome "123.0.6312" in cache
-2024-03-27 16:03:08,202,Get LATEST chromedriver version for google-chrome
+2024-03-28 13:32:15,737,====== WebDriver manager ======
+2024-03-28 13:32:15,885,Driver [/Users/abito/.wdm/drivers/geckodriver/macos-aarch64/v0.34.0/geckodriver] found in cache
