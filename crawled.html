@@ -1114,17 +1114,17 @@ $(function(){
 <form id="rndMngForm" name="rndMngForm" action="/rndgate/eg/un/ra/mng.do" method="post">
     <input id="flag" name="flag" type="hidden" value="">
     <!-- 현황 전체선택 여부 -->
-    <input id="searchFormList" name="searchFormList" type="hidden" value="">
+    <input id="searchFormList" name="searchFormList" type="hidden" value="searchFormListALL">
     <!-- 형태 검색조건 -->
     <input id="searchStatusList" name="searchStatusList" type="hidden" value="">
     <!-- 현황 검색조건 -->
     <input id="searchDeptList" name="searchDeptList" type="hidden" value="">
     <!-- 부서 검색조건 -->
-    <input id="searchSortType" name="searchSortType" type="hidden" value="ascDesc">
+    <input id="searchSortType" name="searchSortType" type="hidden" value="">
     <!-- 정렬형태 -->
-    <input id="searchSortItem" name="searchSortItem" type="hidden" value="S_501">
+    <input id="searchSortItem" name="searchSortItem" type="hidden" value="">
     <!-- 정렬대상 -->
-    <input id="searchSortOrdr" name="searchSortOrdr" type="hidden" value="S_D">
+    <input id="searchSortOrdr" name="searchSortOrdr" type="hidden" value="">
     <!-- 정렬조건-->
     <!-- 리스트갯수-->
     <input type="hidden" id="isFileSearch" name="isFileSearch" value="false">
@@ -1543,7 +1543,7 @@ $(function(){
 
         <p>
             <span class="list_name1">키워드</span>
-            <input tabindex="6" style="width: 712px;" name="searchKeyword" id="searchKeyword" type="text" value="" placeholder="국가R&amp;D통합공고 키워드 검색" title="국가R&amp;D통합공고 키워드 검색">
+            <input tabindex="6" style="width: 712px;" name="searchKeyword" id="searchKeyword" type="text" value="블록체인" placeholder="국가R&amp;D통합공고 키워드 검색" title="국가R&amp;D통합공고 키워드 검색">
         </p>
         
         <p class="check_file_area">
@@ -1650,10 +1650,10 @@ $(function(){
     <!-- start # 검색 결과 리스트 -->
     <div id="rndListArea">
         <!-- start # 리스트 타이틀 -->
-        <input type="hidden" name="totalCount" id="totalCount" value="70804">
+        <input type="hidden" name="totalCount" id="totalCount" value="69">
         <div class="new_ntis_btitle">
             <div class="btitle_left">
-                <h3 class="t_head">검색결과 <span>70,804건</span></h3>
+                <h3 class="t_head">검색결과 <span>69건</span></h3>
             </div>
 
             <div class="table_option">
@@ -1698,7 +1698,7 @@ $(function(){
                     <th>부처명</th>
                     <th>접수일
                         <button name="sort" class="descending">
-                            <span class="descending" id="sort5Btn"></span>
+                            <span class="" id="sort5Btn"></span>
                         </button>
                     </th>
                     <th>마감일
@@ -1712,217 +1712,9 @@ $(function(){
             <tbody>
                 
                     <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176163" title="2024년 인체데이터 활용 사업모델 개발"></td>
+                        <td><input type="checkbox" name="selectCheckList" value="1170578" title="(2024-디지털-03(위탁2)) 블록체인 기반 디지털증거 무결성 유지 방법 연구"></td>
                         <td data-title="순번" id="mo_disnone_td1">
-                            70804
-                        </td>
-                        <td data-title="현황">
-                                
-                                    <span style="color: blue;">접수예정</span>
-                                
-                                
-                                
-                                
-                            </td>
-                        <td data-title="공고명" class="tl">
-                            <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176163&amp;flag=rndList" onclick="javascript:fn_view('1176163'); return false;" title="2024년 인체데이터 활용 사업모델 개발"> 2024년 인체데이터 활용 사업모델 개발
-                                </a>
-                            </div>
-                        </td>
-
-                        <td data-title="부처명">산업통상자원부</td>
-
-                        
-
-                            
-                                <td data-title="접수일">2024.04.05</td>
-                                <td data-title="마감일">2024.04.09</td>
-
-                            
-
-                            
-
-                        
-                        <td data-title="D-day" class="end">
-                                
-                                
-
-                                
-                                
-
-                                
-                                
-                                
-                                    
-                                    
-                                    
-                                    D-12
-                                
-
-                            </td>
-                    </tr>
-                
-                    <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176155" title="(용역)산림유전자원보호구역 식물분포 조사 및 관리효과성 평가 연구"></td>
-                        <td data-title="순번" id="mo_disnone_td1">
-                            70803
-                        </td>
-                        <td data-title="현황">
-                                
-                                    <span style="color: blue;">접수예정</span>
-                                
-                                
-                                
-                                
-                            </td>
-                        <td data-title="공고명" class="tl">
-                            <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176155&amp;flag=rndList" onclick="javascript:fn_view('1176155'); return false;" title="(용역)산림유전자원보호구역 식물분포 조사 및 관리효과성 평가 연구"> (용역)산림유전자원보호구역 식물분포 조사 및 관리효과성 평가 연구
-                                </a>
-                            </div>
-                        </td>
-
-                        <td data-title="부처명">산림청</td>
-
-                        
-
-                            
-                                <td data-title="접수일">2024.04.09</td>
-                                <td data-title="마감일">2024.04.12</td>
-
-                            
-
-                            
-
-                        
-                        <td data-title="D-day" class="end">
-                                
-                                
-
-                                
-                                
-
-                                
-                                
-                                
-                                    
-                                    
-                                    
-                                    D-15
-                                
-
-                            </td>
-                    </tr>
-                
-                    <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176146" title="2024년 수의생명자원 수집 및 관리 용역"></td>
-                        <td data-title="순번" id="mo_disnone_td1">
-                            70802
-                        </td>
-                        <td data-title="현황">
-                                
-                                    <span style="color: blue;">접수예정</span>
-                                
-                                
-                                
-                                
-                            </td>
-                        <td data-title="공고명" class="tl">
-                            <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176146&amp;flag=rndList" onclick="javascript:fn_view('1176146'); return false;" title="2024년 수의생명자원 수집 및 관리 용역"> 2024년 수의생명자원 수집 및 관리 용역
-                                </a>
-                            </div>
-                        </td>
-
-                        <td data-title="부처명">농림축산식품부</td>
-
-                        
-
-                            
-                                <td data-title="접수일">2024.04.09</td>
-                                <td data-title="마감일">2024.04.12</td>
-
-                            
-
-                            
-
-                        
-                        <td data-title="D-day" class="end">
-                                
-                                
-
-                                
-                                
-
-                                
-                                
-                                
-                                    
-                                    
-                                    
-                                    D-15
-                                
-
-                            </td>
-                    </tr>
-                
-                    <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176142" title="혼합전위이론 기반 열화영향인자 특성분석"></td>
-                        <td data-title="순번" id="mo_disnone_td1">
-                            70801
-                        </td>
-                        <td data-title="현황">
-                                
-                                    <span style="color: blue;">접수예정</span>
-                                
-                                
-                                
-                                
-                            </td>
-                        <td data-title="공고명" class="tl">
-                            <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176142&amp;flag=rndList" onclick="javascript:fn_view('1176142'); return false;" title="혼합전위이론 기반 열화영향인자 특성분석"> 혼합전위이론 기반 열화영향인자 특성분석
-                                </a>
-                            </div>
-                        </td>
-
-                        <td data-title="부처명">산업통상자원부</td>
-
-                        
-
-                            
-                                <td data-title="접수일">2024.04.08</td>
-                                <td data-title="마감일">2024.04.11</td>
-
-                            
-
-                            
-
-                        
-                        <td data-title="D-day" class="end">
-                                
-                                
-
-                                
-                                
-
-                                
-                                
-                                
-                                    
-                                    
-                                    
-                                    D-14
-                                
-
-                            </td>
-                    </tr>
-                
-                    <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176136" title="국가기반시설(가스시설) 산불대응 체계 구축 용역 재공고"></td>
-                        <td data-title="순번" id="mo_disnone_td1">
-                            70800
+                            69
                         </td>
                         <td data-title="현황">
                                 
@@ -1934,18 +1726,18 @@ $(function(){
                             </td>
                         <td data-title="공고명" class="tl">
                             <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176136&amp;flag=rndList" onclick="javascript:fn_view('1176136'); return false;" title="국가기반시설(가스시설) 산불대응 체계 구축 용역 재공고"> 국가기반시설(가스시설) 산불대응 체계 구축 용역 재공고
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1170578&amp;flag=rndList" onclick="javascript:fn_view('1170578'); return false;" title="(2024-디지털-03(위탁2)) 블록체인 기반 디지털증거 무결성 유지 방법 연구"> (2024-디지털-03(위탁2)) 블록체인 기반 디지털증거 무결성 유지 방법 연구
                                 </a>
                             </div>
                         </td>
 
-                        <td data-title="부처명">산림청</td>
+                        <td data-title="부처명">행정안전부</td>
 
                         
 
                             
-                                <td data-title="접수일">2024.03.27</td>
-                                <td data-title="마감일">2024.03.27</td>
+                                <td data-title="접수일">2024.02.29</td>
+                                <td data-title="마감일">2024.03.12</td>
 
                             
 
@@ -1972,34 +1764,43 @@ $(function(){
                     </tr>
                 
                     <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176135" title="정책연구용역(비대면(온라인) 금융상품 판매과정에서 다크패턴 사용제한 가이드라인 연구)"></td>
+                        <td><input type="checkbox" name="selectCheckList" value="1169106" title="「2024년 블록체인 컨설팅 지원」사업 수요기업 공모"></td>
                         <td data-title="순번" id="mo_disnone_td1">
-                            70799
+                            68
                         </td>
                         <td data-title="현황">
                                 
                                 
-                                    <span style="color: red;">접수중</span>
                                 
+                                    <span>마감</span>
                                 
                                 
                             </td>
                         <td data-title="공고명" class="tl">
                             <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176135&amp;flag=rndList" onclick="javascript:fn_view('1176135'); return false;" title="정책연구용역(비대면(온라인) 금융상품 판매과정에서 다크패턴 사용제한 가이드라인 연구)"> 정책연구용역(비대면(온라인) 금융상품 판매과정에서 다크패턴 사용제한 가이드라인 연구)
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1169106&amp;flag=rndList" onclick="javascript:fn_view('1169106'); return false;" title="「2024년 블록체인 컨설팅 지원」사업 수요기업 공모"> 「2024년 블록체인 컨설팅 지원」사업 수요기업 공모
                                 </a>
                             </div>
                         </td>
 
-                        <td data-title="부처명">기타</td>
+                        <td data-title="부처명">과학기술정보통신부</td>
 
                         
 
                             
-                                <td data-title="접수일">2024.03.27</td>
-                                <td data-title="마감일">2024.04.08</td>
 
                             
+
+                                
+
+                                
+
+                                
+
+                                
+                                    <td data-title="접수일">2024.02.20</td>
+                                    <td data-title="마감일">2024.03.20</td>
+                                
 
                             
 
@@ -2017,39 +1818,39 @@ $(function(){
                                     
                                     
                                     
-                                    D-11
+                                    
                                 
 
                             </td>
                     </tr>
                 
                     <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176133" title="전남 방위산업육성 전략수립 연구용역"></td>
+                        <td><input type="checkbox" name="selectCheckList" value="1168508" title="(연장 공고) (보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(연장 공고) (보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고"></td>
                         <td data-title="순번" id="mo_disnone_td1">
-                            70798
+                            67
                         </td>
                         <td data-title="현황">
                                 
-                                    <span style="color: blue;">접수예정</span>
                                 
                                 
+                                    <span>마감</span>
                                 
                                 
                             </td>
                         <td data-title="공고명" class="tl">
                             <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176133&amp;flag=rndList" onclick="javascript:fn_view('1176133'); return false;" title="전남 방위산업육성 전략수립 연구용역"> 전남 방위산업육성 전략수립 연구용역
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1168508&amp;flag=rndList" onclick="javascript:fn_view('1168508'); return false;" title="(연장 공고) (보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(연장 공고) (보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고"> (연장 공고) (보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(연장 공고) (보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고
                                 </a>
                             </div>
                         </td>
 
-                        <td data-title="부처명">기타</td>
+                        <td data-title="부처명">과학기술정보통신부</td>
 
                         
 
                             
-                                <td data-title="접수일">2024.04.04</td>
-                                <td data-title="마감일">2024.04.08</td>
+                                <td data-title="접수일">2024.02.15</td>
+                                <td data-title="마감일">2024.02.28</td>
 
                             
 
@@ -2069,39 +1870,39 @@ $(function(){
                                     
                                     
                                     
-                                    D-11
+                                    
                                 
 
                             </td>
                     </tr>
                 
                     <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176132" title="첨단바이오RnD분야 효과성분석"></td>
+                        <td><input type="checkbox" name="selectCheckList" value="1165748" title="(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고"></td>
                         <td data-title="순번" id="mo_disnone_td1">
-                            70797
+                            66
                         </td>
                         <td data-title="현황">
                                 
-                                    <span style="color: blue;">접수예정</span>
                                 
                                 
+                                    <span>마감</span>
                                 
                                 
                             </td>
                         <td data-title="공고명" class="tl">
                             <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176132&amp;flag=rndList" onclick="javascript:fn_view('1176132'); return false;" title="첨단바이오RnD분야 효과성분석"> 첨단바이오RnD분야 효과성분석
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1165748&amp;flag=rndList" onclick="javascript:fn_view('1165748'); return false;" title="(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고"> (보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고
                                 </a>
                             </div>
                         </td>
 
-                        <td data-title="부처명">보건복지부</td>
+                        <td data-title="부처명">과학기술정보통신부</td>
 
                         
 
                             
-                                <td data-title="접수일">2024.04.05</td>
-                                <td data-title="마감일">2024.04.09</td>
+                                <td data-title="접수일">2024.01.23</td>
+                                <td data-title="마감일">2024.02.14</td>
 
                             
 
@@ -2121,39 +1922,39 @@ $(function(){
                                     
                                     
                                     
-                                    D-12
+                                    
                                 
 
                             </td>
                     </tr>
                 
                     <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176131" title="2024년도 찾아가는 협력교육  농촌진흥기관 활력조직 만들기 과정 운영"></td>
+                        <td><input type="checkbox" name="selectCheckList" value="1165747" title="(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고"></td>
                         <td data-title="순번" id="mo_disnone_td1">
-                            70796
+                            65
                         </td>
                         <td data-title="현황">
                                 
                                 
-                                    <span style="color: red;">접수중</span>
                                 
+                                    <span>마감</span>
                                 
                                 
                             </td>
                         <td data-title="공고명" class="tl">
                             <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176131&amp;flag=rndList" onclick="javascript:fn_view('1176131'); return false;" title="2024년도 찾아가는 협력교육  농촌진흥기관 활력조직 만들기 과정 운영"> 2024년도 찾아가는 협력교육  농촌진흥기관 활력조직 만들기 과정 운영
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1165747&amp;flag=rndList" onclick="javascript:fn_view('1165747'); return false;" title="(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고"> (보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고_(2024)(보안·블록체인 부문) 2024년도 제1차 정보통신·방송 기술개발사업 및 표준개발지원사업 신규지원 대상과제 공고
                                 </a>
                             </div>
                         </td>
 
-                        <td data-title="부처명"></td>
+                        <td data-title="부처명">과학기술정보통신부</td>
 
                         
 
                             
-                                <td data-title="접수일">2024.03.28</td>
-                                <td data-title="마감일">2024.04.09</td>
+                                <td data-title="접수일">2024.01.23</td>
+                                <td data-title="마감일">2024.02.14</td>
 
                             
 
@@ -2173,39 +1974,161 @@ $(function(){
                                     
                                     
                                     
-                                    D-12
+                                    
                                 
 
                             </td>
                     </tr>
                 
                     <tr>
-                        <td><input type="checkbox" name="selectCheckList" value="1176128" title="기록유산 DB구축(3차)"></td>
+                        <td><input type="checkbox" name="selectCheckList" value="1150449" title="고객 정보, 거래 정보 관리를 위한 블록체인 기술 개발"></td>
                         <td data-title="순번" id="mo_disnone_td1">
-                            70795
+                            64
                         </td>
                         <td data-title="현황">
                                 
-                                    <span style="color: blue;">접수예정</span>
                                 
                                 
+                                    <span>마감</span>
                                 
                                 
                             </td>
                         <td data-title="공고명" class="tl">
                             <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1176128&amp;flag=rndList" onclick="javascript:fn_view('1176128'); return false;" title="기록유산 DB구축(3차)"> 기록유산 DB구축(3차)
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1150449&amp;flag=rndList" onclick="javascript:fn_view('1150449'); return false;" title="고객 정보, 거래 정보 관리를 위한 블록체인 기술 개발"> 고객 정보, 거래 정보 관리를 위한 블록체인 기술 개발
                                 </a>
                             </div>
                         </td>
 
-                        <td data-title="부처명">문화재청</td>
+                        <td data-title="부처명">과학기술정보통신부</td>
 
                         
 
                             
-                                <td data-title="접수일">2024.04.15</td>
-                                <td data-title="마감일">2024.04.17</td>
+
+                            
+
+                                
+
+                                
+
+                                
+
+                                
+                                    <td data-title="접수일">2023.07.18</td>
+                                    <td data-title="마감일">2023.07.24</td>
+                                
+
+                            
+
+                        
+                        <td data-title="D-day" class="end">
+                                
+                                
+
+                                
+                                
+
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                    
+                                
+
+                            </td>
+                    </tr>
+                
+                    <tr>
+                        <td><input type="checkbox" name="selectCheckList" value="1150448" title="블록체인 기반 반려동물 NFT Marketplace 기술 개발 및 시스템 구축"></td>
+                        <td data-title="순번" id="mo_disnone_td1">
+                            63
+                        </td>
+                        <td data-title="현황">
+                                
+                                
+                                
+                                    <span>마감</span>
+                                
+                                
+                            </td>
+                        <td data-title="공고명" class="tl">
+                            <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1150448&amp;flag=rndList" onclick="javascript:fn_view('1150448'); return false;" title="블록체인 기반 반려동물 NFT Marketplace 기술 개발 및 시스템 구축"> 블록체인 기반 반려동물 NFT Marketplace 기술 개발 및 시스템 구축
+                                </a>
+                            </div>
+                        </td>
+
+                        <td data-title="부처명">과학기술정보통신부</td>
+
+                        
+
+                            
+
+                            
+
+                                
+
+                                
+
+                                
+
+                                
+                                    <td data-title="접수일">2023.07.18</td>
+                                    <td data-title="마감일">2023.07.24</td>
+                                
+
+                            
+
+                        
+                        <td data-title="D-day" class="end">
+                                
+                                
+
+                                
+                                
+
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                    
+                                
+
+                            </td>
+                    </tr>
+                
+                    <tr>
+                        <td><input type="checkbox" name="selectCheckList" value="1139507" title="SW중심 e모빌리티 보안전략방안 및 공유환경 블록체인 서비스모델 연구"></td>
+                        <td data-title="순번" id="mo_disnone_td1">
+                            62
+                        </td>
+                        <td data-title="현황">
+                                
+                                
+                                
+                                    <span>마감</span>
+                                
+                                
+                            </td>
+                        <td data-title="공고명" class="tl">
+                            <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1139507&amp;flag=rndList" onclick="javascript:fn_view('1139507'); return false;" title="SW중심 e모빌리티 보안전략방안 및 공유환경 블록체인 서비스모델 연구"> SW중심 e모빌리티 보안전략방안 및 공유환경 블록체인 서비스모델 연구
+                                </a>
+                            </div>
+                        </td>
+
+                        <td data-title="부처명">과학기술정보통신부</td>
+
+                        
+
+                            
+                                <td data-title="접수일">2023.05.03</td>
+                                <td data-title="마감일">2023.05.17</td>
 
                             
 
@@ -2225,7 +2148,111 @@ $(function(){
                                     
                                     
                                     
-                                    D-20
+                                    
+                                
+
+                            </td>
+                    </tr>
+                
+                    <tr>
+                        <td><input type="checkbox" name="selectCheckList" value="1131614" title="2023년도 블록체인 확산을 위한 글로벌 진출전략 및 규제혁신 연구"></td>
+                        <td data-title="순번" id="mo_disnone_td1">
+                            61
+                        </td>
+                        <td data-title="현황">
+                                
+                                
+                                
+                                    <span>마감</span>
+                                
+                                
+                            </td>
+                        <td data-title="공고명" class="tl">
+                            <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1131614&amp;flag=rndList" onclick="javascript:fn_view('1131614'); return false;" title="2023년도 블록체인 확산을 위한 글로벌 진출전략 및 규제혁신 연구"> 2023년도 블록체인 확산을 위한 글로벌 진출전략 및 규제혁신 연구
+                                </a>
+                            </div>
+                        </td>
+
+                        <td data-title="부처명">과학기술정보통신부</td>
+
+                        
+
+                            
+                                <td data-title="접수일">2023.04.12</td>
+                                <td data-title="마감일">2023.04.14</td>
+
+                            
+
+                            
+
+                        
+                        <td data-title="D-day" class="end">
+                                
+                                
+
+                                
+                                
+
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                    
+                                
+
+                            </td>
+                    </tr>
+                
+                    <tr>
+                        <td><input type="checkbox" name="selectCheckList" value="1124295" title="고도화된 블록체인의 취약점 분석 및 해결을 위한 보안 기술 연구"></td>
+                        <td data-title="순번" id="mo_disnone_td1">
+                            60
+                        </td>
+                        <td data-title="현황">
+                                
+                                
+                                
+                                    <span>마감</span>
+                                
+                                
+                            </td>
+                        <td data-title="공고명" class="tl">
+                            <div style="display: block; width: 490px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <a href="/rndgate/eg/un/ra/view.do?roRndUid=1124295&amp;flag=rndList" onclick="javascript:fn_view('1124295'); return false;" title="고도화된 블록체인의 취약점 분석 및 해결을 위한 보안 기술 연구"> 고도화된 블록체인의 취약점 분석 및 해결을 위한 보안 기술 연구
+                                </a>
+                            </div>
+                        </td>
+
+                        <td data-title="부처명">과학기술정보통신부</td>
+
+                        
+
+                            
+                                <td data-title="접수일">2023.02.17</td>
+                                <td data-title="마감일">2023.03.03</td>
+
+                            
+
+                            
+
+                        
+                        <td data-title="D-day" class="end">
+                                
+                                
+
+                                
+                                
+
+                                
+                                
+                                
+                                    
+                                    
+                                    
+                                    
                                 
 
                             </td>
@@ -2249,7 +2276,7 @@ $(function(){
         
             <div class="pagination">
                 <div>
-                    <a href="?pageIndex=1" onclick="fn_search(1);return false; ">처음</a><a href="?pageIndex=1" onclick="fn_search(1);return false; ">이전</a><a href="#" class="active">1</a><a href="?pageIndex=2" onclick="fn_search(2);return false; ">2</a><a href="?pageIndex=3" onclick="fn_search(3);return false; ">3</a><a href="?pageIndex=4" onclick="fn_search(4);return false; ">4</a><a href="?pageIndex=5" onclick="fn_search(5);return false; ">5</a><a href="?pageIndex=6" onclick="fn_search(6);return false; ">6</a><a href="?pageIndex=7" onclick="fn_search(7);return false; ">7</a><a href="?pageIndex=8" onclick="fn_search(8);return false; ">8</a><a href="?pageIndex=9" onclick="fn_search(9);return false; ">9</a><a href="?pageIndex=10" onclick="fn_search(10);return false; ">10</a><a href="?pageIndex=11" onclick="fn_search(11);return false; ">다음</a><a href="?pageIndex=7081" onclick="fn_search(7081);return false; ">끝</a>
+                    <a href="#" class="active">1</a><a href="?pageIndex=2" onclick="fn_search(2);return false; ">2</a><a href="?pageIndex=3" onclick="fn_search(3);return false; ">3</a><a href="?pageIndex=4" onclick="fn_search(4);return false; ">4</a><a href="?pageIndex=5" onclick="fn_search(5);return false; ">5</a><a href="?pageIndex=6" onclick="fn_search(6);return false; ">6</a><a href="?pageIndex=7" onclick="fn_search(7);return false; ">7</a>
 
                 </div>
             </div>
@@ -2783,7 +2810,7 @@ $(function(){
 <!-- ====================== end # 페이지 하단 ====================== -->
 
 <!-- Default Progress Spin Bar Start -->
-<div id="spinBar" style="">
+<div id="spinBar" style="display: none;">
     <div id="loading-box" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; opacity: 0.8; z-index: 10000; cursor: pointer; text-align: center; ">
         <div style="margin: auto; width: 60px; height: 60px; position: relative; top: 50%; transform: translateY(-50%);">
             <img src="/rndgate/eg/images/ntis/content/service/default.gif" alt="로딩중" style="width: 100%; height: 100%;">

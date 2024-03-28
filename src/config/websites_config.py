@@ -29,6 +29,7 @@ websites = [
         "crawling": "true",
         "selenium": "true",
         "selenium_inputBoxId": "searchKeyword",
+        "selenium_searchBtnXpath": '//a[@onclick="javascript: fn_search(\'1\', \'\'); return false;"]',
         "selenium_keyword": "블록체인"
     },
 ]

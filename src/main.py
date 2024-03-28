@@ -47,9 +47,16 @@ def fetch_posts(website):
         driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=firefox_options)
         driver.get(website['url'])
         search_box = driver.find_element(By.ID, website['selenium_inputBoxId'])
-        search_box.send_keys(website['selenium_keyword'] + Keys.RETURN)
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, website['selector'])))
+        search_box.send_keys(website['selenium_keyword'])
+        print("Searching on ",website['selenium_keyword'])
+        button = driver.find_element(By.XPATH, website['selenium_searchBtnXpath'])
+        button.click()
+        # Wait for the page to load
+        # WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, website['selector'])))
+        # with open('crawled.html', 'w', encoding='utf-8') as file:
+        #     file.write(html_source)
         html_source = driver.page_source
+
         driver.quit()
     else:
         response = requests.get(website['url'])
