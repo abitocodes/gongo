@@ -1,4 +1,3 @@
-# 필요한 라이브러리와 모듈을 임포트합니다.
 import logging
 import os
 import csv
@@ -12,57 +11,42 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
+# Assume .config.websites_config contains the websites configuration
 from .config.websites_config import websites
 
-# 로깅 설정을 정의합니다. 로그 메시지는 'log.csv' 파일에 기록됩니다.
-logging.basicConfig(filename='log.csv', level=logging.INFO, format='%(asctime)s,%(message)s')
+# Setup a specific logger for our app
+app_logger = logging.getLogger("AppLogger")
+app_logger.setLevel(logging.INFO)
+file_handler = logging.FileHandler('log.csv', mode='a', encoding='utf-8')  # 'newline' 인자를 제거했습니다.
+formatter = logging.Formatter('%(asctime)s,%(message)s')
+file_handler.setFormatter(formatter)
+app_logger.addHandler(file_handler)
+
 
 def read_log():
     logged_links = []
-    expected_format = 4  # 예상하는 형식의 컬럼 수입니다.
     try:
-        with open(os.path.join(os.path.dirname(__file__), '..', 'log.csv'), mode='r', newline='', encoding='utf-8') as csvfile:
+        with open('log.csv', mode='r', newline='', encoding='utf-8') as csvfile:
             csv_reader = csv.reader(csvfile)
             for row in csv_reader:
-                if row:
-                    if len(row) >= expected_format:
-                        link = row[3]  # 4번째 항목(인덱스 3)이 링크입니다.
-                        logged_links.append(link)
-                    else:
-                        # 현재 행의 형식이 예상과 다를 경우, 콘솔에 로깅합니다.
-                        print(f"Unexpected format in log file. Expected {expected_format} columns, but got {len(row)}: {row}")
+                if len(row) == 4:
+                    link = row[3]
+                    logged_links.append(link)
     except FileNotFoundError:
-        # 파일이 없는 경우 예외 처리
         pass
     return logged_links
 
 def fetch_posts(website):
     posts = []
     if website['selenium'] == "true":
-        # Firefox 옵션 객체를 생성합니다.
         firefox_options = Options()
-        # 헤드리스 모드를 활성화합니다.
         firefox_options.add_argument("--headless")
-        # WebDriver 로그를 별도의 파일로 리디렉션합니다.
-        firefox_options.set_preference("webdriver.log.file", "/path/to/webdriver.log")
-
-        # Firefox 드라이버를 헤드리스 모드 옵션으로 초기화합니다.
         driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=firefox_options)
         driver.get(website['url'])
-
         search_box = driver.find_element(By.ID, website['selenium_inputBoxId'])
         search_box.send_keys(website['selenium_keyword'] + Keys.RETURN)
-
-        # 페이지가 완전히 로드될 때까지 대기
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, website['selector']))
-        )
-
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, website['selector'])))
         html_source = driver.page_source
-        # 크롤링된 HTML 소스를 파일로 저장합니다.
-        with open('crawled.html', 'w', encoding='utf-8') as file:
-            file.write(html_source)
-
         driver.quit()
     else:
         response = requests.get(website['url'])
@@ -70,27 +54,27 @@ def fetch_posts(website):
 
     soup = BeautifulSoup(html_source, 'html.parser')
     for row in soup.select(website['selector']):
-        title_element = row.select_one('.sbj.txtL a')
-        date_element = row.select_one('.date')
+        title_element = row.select_one(website.get('title_selector', '.sbj.txtL a'))
+        date_element = row.select_one(website.get('date_selector', '.date'))
         if title_element and date_element:
             title = title_element.text.strip()
-            link = website['base_url'] + title_element.get('href')
+            link = website['base_url'] + title_element.get('href', '')
             date = date_element.text.strip()
             source = website['name']
             posts.append({'title': title, 'link': link, 'date': date, 'source': source})
     return posts
 
 def log_and_print_posts(posts):
-    new_posts = [post for post in posts if post['link'] not in read_log()]
+    logged_links = read_log()  # 이전에 로그에 기록된 링크들을 읽어옵니다.
+    new_posts = [post for post in posts if post['link'] not in logged_links]  # 기록되지 않은 새로운 포스트만 필터링
     if not new_posts:
         return False
-    for post in new_posts:
-        message = f"일자: {post['date']}, 제목: {post['title']}, 출처: {post['source']}, 링크: {post['link']}"
-        print(message.replace(',', '\n'))
-        with open(os.path.join(os.path.dirname(__file__), '..', 'log.csv'), 'a', newline='', encoding='utf-8') as log_file:
-            csv_writer = csv.writer(log_file)
-            csv_writer.writerow([post['date'], post['title'], post['source'], post['link']])
-    return True
+    else:
+        for post in new_posts:
+            message = f"{post['date']}, {post['title']}, {post['source']}, {post['link']}"
+            print(message.replace(',', '\n'))  # 콘솔에 출력
+            app_logger.info(message)  # 로그 파일에 기록
+        return True
 
 def main():
     logged_links = read_log()
@@ -98,10 +82,10 @@ def main():
     for website in websites:
         if website['crawling'] == "true":
             posts = fetch_posts(website)
-            if posts and log_and_print_posts(posts):
+            if log_and_print_posts(posts):
                 new_posts_found = True
     if not new_posts_found:
-        print("새로운 게시글이 없습니다.")
+        print("No new posts found.")
 
 if __name__ == "__main__":
     main()
