@@ -17,24 +17,23 @@ from .config.websites_config import websites
 # Setup a specific logger for our app
 app_logger = logging.getLogger("AppLogger")
 app_logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler('log.csv', mode='a', encoding='utf-8')  # 'newline' 인자를 제거했습니다.
+file_handler = logging.FileHandler('log.csv', mode='a', encoding='utf-8')
 formatter = logging.Formatter('%(asctime)s,%(message)s')
 file_handler.setFormatter(formatter)
 app_logger.addHandler(file_handler)
 
-
 def read_log():
-    logged_links = []
+    logged_titles = []
     try:
-        with open('log.csv', mode='r', newline='', encoding='utf-8') as csvfile:
+        with open('log.csv', mode='r', encoding='utf-8') as csvfile:
             csv_reader = csv.reader(csvfile)
             for row in csv_reader:
-                if len(row) == 4:
-                    link = row[3]
-                    logged_links.append(link)
+                title = row[3]
+                # print(f"Reading log: {title}")
+                logged_titles.append(title)
     except FileNotFoundError:
         pass
-    return logged_links
+    return logged_titles
 
 def fetch_posts(website):
     posts = []
@@ -65,8 +64,14 @@ def fetch_posts(website):
     return posts
 
 def log_and_print_posts(posts):
-    logged_links = read_log()  # 이전에 로그에 기록된 링크들을 읽어옵니다.
-    new_posts = [post for post in posts if post['link'] not in logged_links]  # 기록되지 않은 새로운 포스트만 필터링
+    logged_titles = read_log()  # 이전에 로그에 기록된 링크들을 읽어옵니다.
+    head_logged_titles = logged_titles[:5]
+    print("head_logged_titles", head_logged_titles)
+
+    new_posts = []
+    for post in posts:
+        if post['title'] not in logged_titles:
+            new_posts.append(post)  # 기록되지 않은 새로운 포스트만 필터링
     if not new_posts:
         return False
     else:
@@ -77,7 +82,6 @@ def log_and_print_posts(posts):
         return True
 
 def main():
-    logged_links = read_log()
     new_posts_found = False
     for website in websites:
         if website['crawling'] == "true":
