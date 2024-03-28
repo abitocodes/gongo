@@ -32,4 +32,16 @@ websites = [
         "selenium_searchBtnXpath": '//a[@onclick="javascript: fn_search(\'1\', \'\'); return false;"]',
         "selenium_keyword": "블록체인"
     },
+    {
+        "name": "과학기술정보통신부>소식>사업공고>과학기술정보통신부",
+        "url": "https://www.msit.go.kr/bbs/list.do?sCode=user&mId=129&mPid=224&pageIndex=1&bbsSeqNo=100&nttSeqNo=&searchOpt=ALL&searchTxt=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8",
+        "base_url": "https://www.msit.go.kr",
+        "selector": "tbody tr:not(.notice)", 
+        "title_selector": "td.sbj.txtL a", 
+        "date_selector": "td.date",
+        "crawling": "true",
+        "selenium": "false",
+    },
 ]
+
+

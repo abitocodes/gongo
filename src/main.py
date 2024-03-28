@@ -64,8 +64,8 @@ def fetch_posts(website):
 
     soup = BeautifulSoup(html_source, 'html.parser')
     for row in soup.select(website['selector']):
-        title_element = row.select_one(website.get('title_selector', '.sbj.txtL a'))
-        date_element = row.select_one(website.get('date_selector', '.date'))
+        title_element = row.select_one(website.get('title_selector', 'td.sbj.txtL a'))
+        date_element = row.select_one(website.get('date_selector', 'td.date'))
         if title_element and date_element:
             title = title_element.text.strip()
             link = website['base_url'] + title_element.get('href', '')
