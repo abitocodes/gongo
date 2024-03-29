@@ -11,8 +11,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
-# Assume .config.websites_config contains the websites configuration
-from .config.websites_config import websites
+from .websites_config import websites
 import hashlib
 
 def generate_sha256_hash(text):
@@ -40,46 +39,17 @@ def read_log():
     return logged_primaries
 
 def fetch_posts(website):
-    posts = []
-    if website['selenium'] == "true":
-        firefox_options = Options()
-        firefox_options.add_argument("--headless")
-        driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=firefox_options)
-        driver.get(website['url'])
-        search_box = driver.find_element(By.ID, website['selenium_inputBoxId'])
-        search_box.send_keys(website['selenium_keyword'])
-        print("Searching on ",website['selenium_keyword'])
-        button = driver.find_element(By.XPATH, website['selenium_searchBtnXpath'])
-        button.click()
-        # Wait for the page to load
-        # WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, website['selector'])))
-        # with open('crawled.html', 'w', encoding='utf-8') as file:
-        #     file.write(html_source)
-        html_source = driver.page_source
-
-        driver.quit()
-    else:
-        response = requests.get(website['url'])
-        html_source = response.content
-
-    soup = BeautifulSoup(html_source, 'html.parser')
-    for row in soup.select(website['selector']):
-        title_element = row.select_one(website.get('title_selector', 'td.sbj.txtL a'))
-        date_element = row.select_one(website.get('date_selector', 'td.date'))
-        if title_element and date_element:
-            title = title_element.text.strip()
-            link = website['base_url'] + title_element.get('href', '')
-            date = date_element.text.strip()
-            source = website['name']
-            posts.append({'title': title, 'link': link, 'date': date, 'source': source})
-    return posts
+    fetch_method = website['fetch_method']
+    module_name = f"src.fetch_methods.{fetch_method}"
+    fetch_module = __import__(module_name, fromlist=['fetch_posts'])
+    return fetch_module.fetch_posts(website)
 
 def log_and_print_posts(posts):
     logged_primaries = read_log()  # 이전에 로그에 기록된 해시들을 읽어옵니다.
 
     new_posts = []
     for post in posts:
-        post_primary = generate_sha256_hash(post['title'])
+        post_primary = generate_sha256_hash(post['title']+post['date'])
         if post_primary not in logged_primaries:
             post['primary'] = post_primary  # 해시를 포스트 딕셔너리에 추가
             new_posts.append(post)
@@ -92,14 +62,15 @@ def log_and_print_posts(posts):
             app_logger.info(message)  # 로그 파일에 기록
         return True
 
-
 def main():
     new_posts_found = False
     for website in websites:
-        if website['crawling'] == "true":
+        if website['onCrawling'] == "true":
+            print("Start Fetching Posts:", website['name'])
             posts = fetch_posts(website)
             if log_and_print_posts(posts):
                 new_posts_found = True
+        print("Done Fetching Posts:", website['name'])
     if not new_posts_found:
         print("No new posts found.")
 
