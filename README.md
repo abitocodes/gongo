@@ -9,7 +9,6 @@ This project is a Python-based crawler designed to automatically scrape grant an
 - **Slack Integration**: Automatically sends notifications to a designated Slack channel, providing timely updates on new grant announcements.
 - **Flexible Configuration**: Easily add or modify website configurations to tailor the crawler to specific needs.
 
-
 ## Getting Started
 
 1. Ensure Python 3.7+ is installed.
@@ -18,7 +17,7 @@ This project is a Python-based crawler designed to automatically scrape grant an
 4. Set up the `.env` file with your Slack API token and channel ID.
 5. Run `python start.py` to start the scheduler and crawler.
 
-## Project Structure
+## Key Files
 
 The project consists of several key components outlined below:
 
