@@ -26,9 +26,9 @@ The project consists of several key components outlined below:
 - `src/websites_config.py`: Configuration file containing details of websites to be crawled, including URLs, selectors for scraping, and other parameters tailored to each site's structure.
 - `src/fetch_methods/`: A directory containing various Python scripts (`useSelenium.py`, `useSeleniumCheckBox.py`, `useUrlQuery-x.py`, etc.), each implementing a specific method for fetching and processing website data.
 
-### Configuring Timezone on AWS EC2 Instances
+### Configuring Timezone
 
-This program is designed to align with Korean Standard Time. For computers not set to Korean Standard Time, such as AWS EC2 instances, here is how you can adjust the settings appropriately. **_Attention!_ Applying the commands below updates the timezone for all users and processes on the instance to Korean Standard Time.**
+This program is designed to align with Korean Standard Time. For computers not set to Korean Standard Time, such as AWS EC2 instances, here is how you can adjust the settings appropriately. **<U>Attention! Applying the commands below updates the timezone for all users and processes on the instance to Korean Standard Time.</U>**
 
 
 The default timezone for Amazon EC2 instances is Coordinated Universal Time (UTC). Upon launching an instance, AWS initializes it with the UTC timezone. You can modify the timezone settings of your instance via the operating system.
