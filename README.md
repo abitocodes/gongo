@@ -28,7 +28,7 @@ The project consists of several key components outlined below:
 
 ### Configuring Timezone
 
-This program is designed to align with Korean Standard Time. For computers not set to Korean Standard Time, such as AWS EC2 instances, here is how you can adjust the settings appropriately. **<U>Attention! Applying the commands below updates the timezone for all users and processes on the instance to Korean Standard Time.</U>**
+This program is designed to align with Korean Standard Time. For computers not set to Korean Standard Time, such as AWS EC2 instances, here is how you can adjust the settings appropriately. **__Applying the commands below updates the timezone for all users and processes on the instance to Korean Standard Time.__**
 
 
 The default timezone for Amazon EC2 instances is Coordinated Universal Time (UTC). Upon launching an instance, AWS initializes it with the UTC timezone. You can modify the timezone settings of your instance via the operating system.
