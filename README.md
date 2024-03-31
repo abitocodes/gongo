@@ -2,6 +2,8 @@
 
 This project is a Python-based crawler designed to automatically scrape grant announcements from various websites and notify users via Slack. It employs Selenium for dynamic web pages and BeautifulSoup for static pages, facilitating comprehensive coverage across different types of web structures.
 
+This was created to gather information on blockchain or startup support projects in Korea.
+
 ## Features
 
 - **Dynamic and Static Page Handling**: Supports both dynamic pages that require interaction and static pages for straightforward scraping.
