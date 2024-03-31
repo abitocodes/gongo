@@ -25,3 +25,25 @@ The project consists of several key components outlined below:
 - `src/main.py`: The core script that orchestrates the crawling process. It fetches website configurations, extracts new posts, logs them, and notifies a Slack channel about any new grant announcements.
 - `src/websites_config.py`: Configuration file containing details of websites to be crawled, including URLs, selectors for scraping, and other parameters tailored to each site's structure.
 - `src/fetch_methods/`: A directory containing various Python scripts (`useSelenium.py`, `useSeleniumCheckBox.py`, `useUrlQuery-x.py`, etc.), each implementing a specific method for fetching and processing website data.
+
+### Configuring Timezone on AWS EC2 Instances
+
+This program is designed to align with Korean Standard Time. For computers not set to Korean Standard Time, such as AWS EC2 instances, here is how you can adjust the settings appropriately.
+
+The default timezone for Amazon EC2 instances is Coordinated Universal Time (UTC). Upon launching an instance, AWS initializes it with the UTC timezone. You can modify the timezone settings of your instance via the operating system.
+
+To check or change the current timezone in your instance:
+
+- For Ubuntu or most Linux distributions, you can check the current timezone by running:
+
+  `timedatectl`
+
+  or
+
+  `cat /etc/timezone`
+
+- To change the timezone to Seoul, which is the timezone this program is synchronized with, use the following command:
+
+  `sudo timedatectl set-timezone Asia/Seoul`
+
+Applying this command updates the timezone for all users and processes on the instance to Korean Standard Time.
