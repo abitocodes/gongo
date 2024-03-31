@@ -1,8 +1,8 @@
-# Grant Announcement Crawler
+# Gongo: Grant Announcement Crawler
 
 This project is a Python-based crawler designed to automatically scrape grant announcements from various websites and notify users via Slack. It employs Selenium for dynamic web pages and BeautifulSoup for static pages, facilitating comprehensive coverage across different types of web structures.
 
-This was created to gather information on blockchain or startup support projects in Korea.
+This was created to gather information on blockchain or startup support projects in Korea. Gongo means 'announcement' in Korean.
 
 ## Features
 
