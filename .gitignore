@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 
 auth.js
+graylab-crawler-gongo.pem
+graylab-crawler-gongo-1.pem

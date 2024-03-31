@@ -2,16 +2,18 @@ websites = [
     {
         "fetch_method": "useUrlQuery-0",
         "name": "KISA 한국인터넷진흥원>알림마당>공지사항",
+        "name_abbr": "한국인터넷진흥원(KISA)",
         "url": "https://www.kisa.or.kr/401?page=1&searchDiv=30&searchWord=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8&_csrf=e3d30d8e-8d61-4b41-b096-efef607dfcfb",
         "base_url": "https://www.kisa.or.kr",
         "selector": "tbody tr:not(.notice)", 
         "title_selector": "td.sbj.txtL a", 
         "date_selector": "td.date",
-        "onCrawling": "false"
+        "onCrawling": "true"
     },
     {
         "fetch_method": "useUrlQuery-0",
         "name": "KISA 한국인터넷진흥원>알림마당>입찰공고",
+        "name_abbr": "한국인터넷진흥원(KISA)",
         "url": "https://www.kisa.or.kr/403?page=1&searchDiv=30&searchWord=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8&_csrf=26bd1a90-afef-4a56-8ad9-58d237afca3a",
         "base_url": "https://www.kisa.or.kr",
         "selector": "tbody tr:not(.notice)", 
@@ -22,6 +24,7 @@ websites = [
     {
         "fetch_method": "useSelenium",
         "name": "국가과학기술지식정보서비스(NTIS)>국가R&D통합공고",
+        "name_abbr": "국가과학기술지식정보서비스(NTIS)",
         "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/mng.do",
         "base_url": "https://www.ntis.go.kr",
         "selector": "table.basic_list tbody tr",
@@ -35,6 +38,7 @@ websites = [
     {
         "fetch_method": "useSeleniumForDynamicPageWithSeparator",
         "name": "과학기술정보통신부>소식>사업공고>과학기술정보통신부",
+        "name_abbr": "과학기술정보통신부",
         "url": "https://www.msit.go.kr/bbs/list.do?sCode=user&mId=129&mPid=224&pageIndex=1&bbsSeqNo=100&nttSeqNo=&searchOpt=ALL&searchTxt=블록체인",
         "base_url": "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=129&mPid=224&pageIndex=1&bbsSeqNo=100&nttSeqNo={SeqNo}&searchOpt=ALL&searchTxt=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8",
         "separator": "{SeqNo}",
@@ -43,18 +47,21 @@ websites = [
     {
         "fetch_method": "useUrlQuery-1",
         "name": "과학기술정보통신부>소식>사업공고>소속유관기관",
+        "name_abbr": "과학기술정보통신부",
         "url": "https://www.msit.go.kr/shareData/list.do?pageIndex=1&conType=BN&sCode=user&mId=130&mPid=224&searchKey=2&searchValue=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8",
         "onCrawling": "false"
     },
     {
         "fetch_method": "useUrlQuery-1",
         "name": "과학기술정보통신부>소식>공지사항>과학기술정보통신부",
+        "name_abbr": "과학기술정보통신부",
         "url": "https://www.msit.go.kr/bbs/list.do?sCode=user&mId=122&mPid=218&pageIndex=1&bbsSeqNo=96&nttSeqNo=&searchOpt=ALL&searchTxt=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8",
         "onCrawling": "false",
     },
     {
         "fetch_method": "useUrlQuery-1",
         "name": "과학기술정보통신부>소식>공지사항>소속유관기관",
+        "name_abbr": "과학기술정보통신부",
         "url": "https://www.msit.go.kr/shareData/list.do?pageIndex=1&conType=NT&sCode=user&mId=124&mPid=218&searchKey=2&searchValue=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8#:~:text=%EA%B2%80%EC%83%89-,38,2023%2D12%2D28,-37",
         "base_url": "https://www.msit.go.kr",
         "onCrawling": "false",
@@ -62,6 +69,7 @@ websites = [
     {
         "fetch_method": "useSelenium",
         "name": "부산블록체인규제자유특구>공지사항",
+        "name_abbr": "부산블록체인규제자유특구",
         "url": "https://blockchainbusan.kr/boardlist.do?boardtype=notice",
         "base_url": "https://blockchainbusan.kr",
         "selector": ".tbl_head01.tbl_wrap.jspbd tbody tr",
@@ -75,6 +83,7 @@ websites = [
     {
         "fetch_method": "useSeleniumCheckBox",
         "name": "인천테크노파크>뉴스>지원사업",
+        "name_abbr": "인천테크노파크",
         "url": "https://itp.or.kr/intro.asp?tmid=13",
         "base_url": "https://itp.or.kr/intro.asp?tmid=13",
         "selector": "tr",
@@ -89,6 +98,7 @@ websites = [
     {
         "fetch_method": "useSeleniumCheckBox",
         "name": "인천테크노파크>뉴스>기관공고",
+        "name_abbr": "인천테크노파크",
         "url": "https://itp.or.kr/intro.asp?tmid=14",
         "base_url": "https://itp.or.kr/intro.asp?tmid=14",
         "selector": "tr",
@@ -103,6 +113,7 @@ websites = [
     {
         "fetch_method": "useSeleniumCheckBox",
         "name": "인천테크노파크>뉴스>유관사업",
+        "name_abbr": "인천테크노파크",
         "url": "https://itp.or.kr/intro.asp?tmid=16",
         "base_url": "https://itp.or.kr/intro.asp?tmid=16",
         "selector": "tr",
@@ -117,6 +128,7 @@ websites = [
     {
         "fetch_method": "useUrlQuery-2",
         "name": "정보통신산업진흥원>알림마당>사업공고",
+        "name_abbr": "정보통신산업진흥원",
         "url": "https://www.nipa.kr/home/2-2?srchKey=&tab=&searchFieldNo3=&searchFieldNo=0&srchText=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8&searchSortKey=",
         "base_url": "https://www.nipa.kr",
         "onCrawling": "false",
@@ -124,6 +136,7 @@ websites = [
     {
         "fetch_method": "useUrlQuery-3",
         "name": "정보통신산업진흥원>알림마당>입찰공고",
+        "name_abbr": "정보통신산업진흥원",
         "url": "https://www.nipa.kr/home/2-3?cntPerPage=10&srchKey=cn&srchText=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8",
         "base_url": "https://www.nipa.kr",
         "onCrawling": "false",
@@ -131,6 +144,7 @@ websites = [
     {
         "fetch_method": "useUrlQuery-3",
         "name": "정보통신산업진흥원>알림마당>공지사항",
+        "name_abbr": "정보통신산업진흥원",
         "url": "https://www.nipa.kr/home/2-1?cntPerPage=10&srchKey=cn&srchText=%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8",
         "base_url": "https://www.nipa.kr",
         "onCrawling": "false",
@@ -138,9 +152,10 @@ websites = [
     {
         "fetch_method": "useUrlQuery-4",
         "name": "중소기업기술정보진흥원>TIPA소식>공지사항",
+        "name_abbr": "중소기업기술정보진흥원",
         "url": "https://www.tipa.or.kr/s040101/index/search_field/eNortjI2tlJy1CsuTcpKTS7RdtTLS8xNBVIlielAMjk_ryQ1r6RYyRpcMAypDUU~/search_keyword/eNortjKzUnq1eeurzQuUrAEolAYs/page/1",
         "base_url": "https://www.tipa.or.kr",
-        "onCrawling": "true",
+        "onCrawling": "false",
     },
 ]
 

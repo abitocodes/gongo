@@ -7,6 +7,7 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from dotenv import load_dotenv
 import os
+from datetime import datetime
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '..', '.env')
 load_dotenv(dotenv_path)
@@ -62,8 +63,11 @@ def log_and_print_posts(posts):
 def post_to_slack(new_posts):
     slack_client = WebClient(token=SLACK_TOKEN)
     for post in new_posts:
+        # 소스에서 '>' 문자를 기준으로 분할하고, 첫 번째 부분만 사용합니다.
+        source_short = post['source'].split('>')[0]
+        
         # 메시지 형식을 설정합니다. "바로가기" 텍스트에 링크를 삽입합니다.
-        message = f"💘 _이봐, 떴어! 떴다구!_ 💘\n*{post['title']}*\n일자/번호: {post['date']}\n출처: {post['source']}\n<{post['link']}|바로가기>"
+        message = f"💘 _이봐, 떴어! 떴다구!_ 💘\n*{post['title']}*\n일자/번호: {post['date']}\n{source_short}\n<{post['link']}|바로가기>"
 
         try:
             # 슬랙 채널에 메시지를 송출합니다.
@@ -73,10 +77,9 @@ def post_to_slack(new_posts):
             # 슬랙 API 에러가 발생하면 콘솔에 에러 메시지를 출력합니다.
             print(f"Error posting to Slack: {e}")
 
-
 def send_no_new_posts_message():
     slack_client = WebClient(token=SLACK_TOKEN)
-    message = "✨ *정찰 완료! 하지만 새로운 공고는 없었어!* ✨"
+    message = "✨ *정찰 완료! 새로운 공고는 없었어!* ✨"
     try:
         slack_client.chat_postMessage(channel=SLACK_CHANNEL, text=message)
         print("Message sent to Slack channel indicating no new posts were found.")
@@ -84,6 +87,7 @@ def send_no_new_posts_message():
         print(f"Error posting to Slack: {e}")
 
 def main():
+    print(f"Started at: {datetime.now()}")
     new_posts_found = False
     for website in websites:
         if website['onCrawling'] == "true":
@@ -111,7 +115,6 @@ def trim_log_file(log_file_path, max_lines=500):
             file.writelines(lines[-max_lines:])
 
 # Assuming the log file path is 'log.csv' and it is located in the current directory
-
 
 if __name__ == "__main__":
     main()
